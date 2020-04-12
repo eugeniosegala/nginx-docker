@@ -6,6 +6,6 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/sample-app:latest']
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['run', 'deploy', '--region', 'europe-west1', '--image', 'gcr.io/$PROJECT_ID/sample-app', '--platform', 'managed', 'sample-website' ]
+    args: ['run', 'deploy', '--port', '9999', '--region', 'europe-west1', '--image', 'gcr.io/$PROJECT_ID/sample-app', '--platform', 'managed', 'sample-website', '--allow-unauthenticated']
 images:
   - 'gcr.io/$PROJECT_ID/sample-app'
